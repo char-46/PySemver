@@ -7,7 +7,7 @@ Semantic Version Module Utils
 import re
 from typing import Any
 
-import exceptions
+from . import exceptions
 
 
 def version_core_check(value: Any, desc: str = "Version Core") -> int:

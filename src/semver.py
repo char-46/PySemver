@@ -1,8 +1,8 @@
 import re
 from typing import Any, Optional, Self
 
-import exceptions
-import semver_utils
+from . import exceptions
+from . import semver_utils
 
 
 class SemabticVersion:
