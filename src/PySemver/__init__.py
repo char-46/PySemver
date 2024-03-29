@@ -1,3 +1,3 @@
-from .semver import SemabticVersion
+from .semver import SemanticVersion
 
-__all__ = [SemabticVersion]
+__all__ = [SemanticVersion]

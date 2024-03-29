@@ -5,9 +5,9 @@ from . import exceptions
 from . import semver_utils
 
 
-class SemabticVersion:
+class SemanticVersion:
     r"""
-    Senabtic Version 2.0.0
+    Semantic Version 2.0.0
     https://semver.org/
 
     This class can be used to represent version numbers or compare two versions.
@@ -110,7 +110,7 @@ class SemabticVersion:
         return f"{self.major}.{self.minor}.{self.patch}-{str(self.pre_release)}+{self.build_matedata}"
 
     def __eq__(self, other: object) -> bool:
-        if not isinstance(other, SemabticVersion):
+        if not isinstance(other, SemanticVersion):
             return False
         if (self.pre_release is not None) and (
             self.major == other.major
@@ -122,7 +122,7 @@ class SemabticVersion:
         return False
 
     def __lt__(self, other: object) -> bool:
-        if not isinstance(other, SemabticVersion):
+        if not isinstance(other, SemanticVersion):
             return False
         if self.major < other.major:
             return True
@@ -144,7 +144,7 @@ class SemabticVersion:
         return False
 
     def __gt__(self, other: object) -> bool:
-        if not isinstance(other, SemabticVersion):
+        if not isinstance(other, SemanticVersion):
             return False
         if self.major > other.major:
             return True
@@ -166,7 +166,7 @@ class SemabticVersion:
         return False
 
     def __ne__(self, other: object) -> bool:
-        if not isinstance(other, SemabticVersion):
+        if not isinstance(other, SemanticVersion):
             return True
         if (
             self.major == other.major
@@ -178,14 +178,14 @@ class SemabticVersion:
         return True
 
     def __le__(self, other: object) -> bool:
-        if not isinstance(other, SemabticVersion):
+        if not isinstance(other, SemanticVersion):
             return False
         if self.__lt__(other) or self.__eq__(other):
             return True
         return False
 
     def __ge__(self, other: object) -> bool:
-        if not isinstance(other, SemabticVersion):
+        if not isinstance(other, SemanticVersion):
             return False
         if self.__gt__(other) or self.__eq__(other):
             return True
